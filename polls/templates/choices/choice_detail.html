@@ -1,0 +1,9 @@
+<article>
+    <h3>{{ choice.question }}</h3>
+    <p>{{ choice.votes }}</p>
+ </article>
+
+ <p>
+    <a href="{% url 'choice-update' choice.id %}">Редактировать</a> 
+    <a href="{% url 'choice-delete' choice.id %}">Удалить</a> 
+</p>

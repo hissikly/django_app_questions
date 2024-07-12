@@ -1,0 +1,15 @@
+{% for question in question_list %} 
+<article>
+   <h2 class="{{ question.pub_date|date:'l' }}">
+       {{ question.pub_date|date:'Y-m-d H:i' }}
+   </h2>
+   <h3>
+       <a href="{% url 'question-detail' question.id %}">
+           {{ question.title }}
+       </a>
+   </h3>
+{% endfor %}
+<article>
+    <h2 class="mark">{% now "Y-m-d H:i" %}</em></h2>
+    <a href="{% url 'question-create' %}"><button>Добавить новую запись</button></a> 
+ </article>

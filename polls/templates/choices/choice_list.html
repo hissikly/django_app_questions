@@ -1,0 +1,15 @@
+{% for question in question_list %} 
+<article>
+   <h2 class="{{ choice.question }}">
+       {{ choice.question }}
+   </h2>
+   <h3>
+       <a href="{% url 'choice-detail' choice.id %}">
+           {{ choice.title }}
+       </a>
+   </h3>
+{% endfor %}
+<article>
+    <h2 class="mark">{% now "Y-m-d H:i" %}</em></h2>
+    <a href="{% url 'choice-create' %}"><button>Добавить новую запись</button></a> 
+ </article>

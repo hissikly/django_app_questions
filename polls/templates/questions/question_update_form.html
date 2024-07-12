@@ -1,0 +1,17 @@
+{% extends "questions/base.html" %} 
+{% block content %}
+   <form method="post">
+         {% csrf_token %}
+       {{ form.as_p }} 
+       <input type="submit" value="Сохранить">
+   </form>
+   {% if question %}
+       <a href="{% url 'question-detail' question.id %}">
+           <button>Отмена</button>
+       </a>
+   {% else %}
+       <a href="{% url 'question-list' %}">
+           <button>Отмена</button>
+       </a>
+   {% endif %}
+{% endblock %}
